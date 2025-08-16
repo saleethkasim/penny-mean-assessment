@@ -1,0 +1,95 @@
+/* Full screen background */
+.auth-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #706280, #b584d6);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Box container */
+.auth-box {
+  width: 400px;
+  padding: 40px 35px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.auth-box h2 {
+  margin-bottom: 25px;
+  color: #333;
+  font-size: 1.8rem;
+}
+
+/* Form groups */
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+  color: #555;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: #2575fc;
+  outline: none;
+}
+
+/* Error messages */
+.error {
+  color: #e74c3c;
+  font-size: 0.85rem;
+  margin-top: 5px;
+}
+
+/* Submit button */
+button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background-color: #2575fc;
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #1a5dcc;
+}
+
+/* Switch login link */
+.switch-text {
+  margin-top: 15px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.switch-text a {
+  color: #2575fc;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.switch-text a:hover {
+  text-decoration: underline;
+}
