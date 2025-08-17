@@ -1,8 +1,11 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common'; // <-- added to fix *ngIf
 
 @Component({
   selector: 'app-dashboard',
+  standalone: true,
+  imports: [CommonModule], // <-- added to fix *ngIf
   template: `
     <div class="dashboard-wrapper">
       <header>

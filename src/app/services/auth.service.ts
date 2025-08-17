@@ -6,7 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = import.meta.env.VITE_API_URL; // or process.env.API_URL depending on setup
+  private apiUrl = 'https://your-backend.onrender.com';
+ // or process.env.API_URL depending on setup
 
 
   constructor(private http: HttpClient) {}
