@@ -1,13 +1,19 @@
 import { Module } from '@nestjs/common';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb+srv://saleeth:Qwerty@saleeth.xuidial.mongodb.net/pennyDB?retryWrites=true&w=majority&appName=Saleeth'),
+    ConfigModule.forRoot({ isGlobal: true }), // loads .env globally
+    MongooseModule.forRootAsync({
+      imports: [ConfigModule],
+      inject: [ConfigService],
+      useFactory: (configService: ConfigService) => ({
+        uri: configService.get<string>('MONGO_URI'),
+      }),
+    }),
     UsersModule,
   ],
-  controllers: [],
-  providers: [],
 })
 export class AppModule {}
