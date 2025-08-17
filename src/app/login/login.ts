@@ -46,11 +46,10 @@ export class Login {
         this.loading = false;
         console.log('✅ Login successful:', res);
 
-        // Save token, user, and login timestamp
         if (res.token && res.user) {
           localStorage.setItem('authToken', res.token);
           localStorage.setItem('user', JSON.stringify(res.user));
-          localStorage.setItem('loginTime', Date.now().toString()); // session timestamp
+          localStorage.setItem('loginTime', Date.now().toString());
         }
 
         alert('Login successful!');

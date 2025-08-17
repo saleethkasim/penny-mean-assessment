@@ -59,22 +59,20 @@ export class ForgotPassword {
       return;
     }
 
-   this.loading = true;
-this.auth.forgotPassword(this.email?.value ?? '').subscribe({
-  next: (res) => {
-    this.loading = false;
-    alert(res?.message || 'Reset link sent!');
+    this.loading = true;
+    this.auth.forgotPassword(this.email?.value ?? '').subscribe({
+      next: (res) => {
+        this.loading = false;
+        alert(res?.message || 'Reset link sent!');
 
-    // Redirect to Reset Password page with a mock token
-    const mockToken = 'DEMO123TOKEN';
-    this.router.navigate(['/reset-password'], { queryParams: { token: mockToken } });
-  },
-  error: (err) => {
-    this.loading = false;
-    console.error('Forgot password error:', err);
-    alert(err?.error?.message || 'Error sending reset link.');
-  }
-});
-
+        // ✅ Use token from backend
+        this.router.navigate(['/reset-password'], { queryParams: { token: res.token } });
+      },
+      error: (err) => {
+        this.loading = false;
+        console.error('Forgot password error:', err);
+        alert(err?.error?.message || 'Error sending reset link.');
+      }
+    });
   }
 }
