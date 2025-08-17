@@ -6,7 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:3000/users';
+  private apiUrl = import.meta.env.VITE_API_URL; // or process.env.API_URL depending on setup
+
 
   constructor(private http: HttpClient) {}
 
